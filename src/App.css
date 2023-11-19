@@ -15,6 +15,63 @@ html, body {
   flex-direction: column;
 }
 
+.news-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.news-list h5 {
+  margin: 10px;
+}
+.news-list.row-layout {
+  justify-content: flex-start;
+}
+.news-list .card-article {
+  position: relative;
+  flex: 0 0 calc(33.333% - 20px);
+  width: 420px;
+  height: auto;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  color: black;
+}
+.news-list .card-article .date-stamp, .news-list .card-article .date-month {
+  position: absolute;
+  left: 20px;
+  background-color: #F0D082;
+  color: black;
+  padding: 5px;
+  width: 56px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.news-list .card-article .date-stamp {
+  top: 20px;
+  font-weight: bold;
+}
+.news-list .card-article .date-month {
+  top: 45px;
+}
+.news-list .card-article img {
+  width: 420px;
+  height: 230px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.news-list .card-article h6 {
+  font-weight: bold;
+  margin: 5px 0;
+}
+.news-list .card-article p {
+  width: 420px;
+}
+
 .btn-transparent {
   background-color: transparent;
   border: 1px solid #191919;
@@ -921,49 +978,10 @@ header .container .menu .main-menu .btn-login {
 }
 .carousel-article .carousel-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-}
-.carousel-article .card-article {
-  position: relative;
-  flex: 0 0 auto;
-  width: 420px;
-  height: 428px;
-  margin: 0 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.carousel-article .card-article .date-stamp, .carousel-article .card-article .date-month {
-  position: absolute;
-  left: 20px;
-  background-color: #F0D082;
-  color: black;
-  padding: 5px;
-  width: 56px;
-  height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.carousel-article .card-article .date-stamp {
-  top: 20px;
-  font-weight: bold;
-}
-.carousel-article .card-article .date-month {
-  top: 45px;
-}
-.carousel-article .card-article img {
-  width: 420px;
-  height: 230px;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.carousel-article .card-article h6 {
-  font-weight: bold;
-  margin: 5px 0;
 }
 .carousel-article .carousel-article-news {
   width: -moz-fit-content;
@@ -1132,6 +1150,7 @@ footer .end-footer .social-media a i {
   justify-content: center;
   align-items: center;
   position: relative;
+  margin-bottom: 30px;
 }
 .showcase-contact .container {
   width: 366px;
@@ -1164,6 +1183,11 @@ footer .end-footer .social-media a i {
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 0;
+  background-image: url("../../assets/images/background-lines.svg");
+  background-size: contain; /* Eller använd 'contain' beroende på önskad effekt */
+  background-position: bottom left;
+  height: 135px; /* Justera detta värde beroende på hur mycket av bilden du vill visa */
 }
 .showcase-contact .showcase-image-wayvy-lines img {
   width: auto;
@@ -1279,6 +1303,12 @@ footer .end-footer .social-media a i {
 .form-container form .error-message {
   color: red;
   font-size: 12px;
+}
+.form-container form .message.success {
+  color: green; /* Stil för framgångsmeddelanden */
+}
+.form-container form .message.error {
+  color: red; /* Stil för felmeddelanden */
 }
 .form-container form button {
   width: 40%;

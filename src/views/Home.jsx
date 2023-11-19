@@ -12,9 +12,10 @@ import Team from '../components/team/Team'
 import Article_news from '../components/article_and_news/Article_news'
 import Subscribe from '../components/subscribe/Subscribe'
 
+
 const Home = () => {
   return (
-    <div className='wrapper'>
+    <>
         <Header/>
         <Showcase/>
         <Company_info/>
@@ -27,7 +28,7 @@ const Home = () => {
         <Article_news/>
         <Subscribe/>
         <Footer/>
-    </div>
+    </>
   )
 }
 

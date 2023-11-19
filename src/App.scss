@@ -17,6 +17,76 @@ html, body {
     flex-direction: column;
 }
 
+.news-list {
+    // Grundläggande stil för nyhetslista
+  
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+
+    h5 {
+        margin: 10px
+    }
+  
+    &.row-layout {
+        justify-content: flex-start; // Justerar korten från vänster
+      }
+    
+
+      
+    .card-article {
+      
+        position: relative;
+        flex: 0 0 calc(33.333% - 20px);
+        width: 420px;
+        height: auto;
+        margin: 0 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-decoration: none;
+        color: black;
+
+        .date-stamp, .date-month {
+            position: absolute;
+            left: 20px;
+            background-color: #F0D082;
+            color: black;
+            padding: 5px;
+            width: 56px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .date-stamp {
+            top: 20px;
+            font-weight: bold;
+        }
+
+        .date-month {
+            top: 45px;
+        }
+
+        img {
+            width: 420px;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        h6 {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        p {
+            width: 420px;
+        }
+    }
+}
+
 .btn-transparent {
     background-color: transparent;
     border: 1px solid #191919;
@@ -139,6 +209,7 @@ header {
     padding: 16px;
     
     
+    
 
     .container {
         display: flex;
@@ -146,6 +217,7 @@ header {
         justify-content: space-between;
         gap: 70px; 
         width: 2500px;
+        
 
         .menu-bars{
             border: none;
@@ -1177,55 +1249,13 @@ header {
     
         .carousel-wrapper {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             margin-bottom: 20px; 
         }
-    
-        .card-article {
-            position: relative;
-            flex: 0 0 auto;
-            width: 420px;
-            height: 428px;
-            margin: 0 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
 
-            .date-stamp, .date-month {
-                position: absolute;
-                left: 20px;
-                background-color: #F0D082;
-                color: black;
-                padding: 5px;
-                width: 56px;
-                height: 32px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .date-stamp {
-                top: 20px;
-                font-weight: bold;
-            }
-    
-            .date-month {
-                top: 45px;
-            }
-    
-            img {
-                width: 420px;
-                height: 230px;
-                object-fit: cover;
-            }
-    
-            h6 {
-                font-weight: bold;
-                margin: 5px 0;
-            }
-        }
+        
     
         .carousel-article-news {
             width: fit-content;
@@ -1429,6 +1459,9 @@ header {
         justify-content: center;
         align-items: center;
         position: relative;
+        margin-bottom: 30px;
+        
+  
       
         .container {
           width: 366px;
@@ -1466,6 +1499,11 @@ header {
           position: absolute;
           bottom: 0;
           left: 0;
+          z-index: 0;
+          background-image: url('../../assets/images/background-lines.svg');
+          background-size: contain; /* Eller använd 'contain' beroende på önskad effekt */
+          background-position: bottom left;
+          height: 135px; /* Justera detta värde beroende på hur mycket av bilden du vill visa */
       
           img {
             width: auto;
@@ -1602,6 +1640,14 @@ header {
                     color: red;
                     font-size: 12px;
                 }
+
+                .message.success {
+                    color: green; /* Stil för framgångsmeddelanden */
+                  }
+                  
+                  .message.error {
+                    color: red; /* Stil för felmeddelanden */
+                  }
     
     
               
@@ -2230,7 +2276,3 @@ header {
 .wrapper-details .details-carousel-control-next {
     display: none;
 }
-
-
-
-
